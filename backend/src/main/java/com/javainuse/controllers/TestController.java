@@ -41,6 +41,7 @@ public class TestController {
 
 	@PostMapping
 	public Employee create(@RequestBody Employee user) {
+		System.out.println(user);
 		employees.add(user);
 		System.out.println(employees);
 		return user;

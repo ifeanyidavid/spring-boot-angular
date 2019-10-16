@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
     EmployeeComponent,
     HeaderComponent,
     FooterComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
