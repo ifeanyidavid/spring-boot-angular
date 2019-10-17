@@ -1,4 +1,4 @@
-package com.javainuse.controllers;
+package com.javainuse.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.javainuse.model.User;
 import com.javainuse.model.Employee;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin()
 @RestController
 @RequestMapping({ "/employees" })
 public class TestController {
@@ -24,6 +25,12 @@ public class TestController {
 	@GetMapping(produces = "application/json")
 	public List<Employee> firstPage() {
 		return employees;
+	}
+
+	@GetMapping(produces = "application/json")
+	@RequestMapping({ "/validateLogin" })
+	public User validateLogin() {
+		return new User("User successfully authenticated");
 	}
 
 	@DeleteMapping(path = { "/{id}" })
@@ -41,9 +48,7 @@ public class TestController {
 
 	@PostMapping
 	public Employee create(@RequestBody Employee user) {
-		System.out.println(user);
 		employees.add(user);
-		System.out.println(employees);
 		return user;
 	}
 
